@@ -23,20 +23,21 @@ export const requestsHandler: RequestsHandler = async ({
   requests,
   expectedData,
 }) => {
-  const data: IRequestsData = {};
+  let data: IRequestsData | null = null;
   let error: any = null;
   try {
     const response = await Promise.all(
       requests.map(request => requestHandler(request))
     );
+    data = {};
     for (let index = 0; index < response.length; index++) {
       data[expectedData[index].dataKey] = {
         data: response[index][0],
         statusCode: response[index][2] as number,
       };
     }
-  } catch (error) {
-    error = error;
+  } catch (err) {
+    error = err;
   }
   return [data, error];
 };
@@ -66,4 +67,4 @@ type RequestHandler = <RequestData>(
 
 type RequestsHandler = (
   requests: IRequestsHandlerParameter
-) => Promise<[IRequestsData, any]>;
+) => Promise<[IRequestsData | null, any]>;

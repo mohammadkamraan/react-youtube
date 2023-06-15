@@ -1,17 +1,22 @@
 import { RouteObject } from "react-router";
 
-import { homeRequests } from "../screens/home/Home";
+import Home, { homeRequests } from "../screens/home/Home";
 
-import { HomeLoader } from "../dataBindedComponents";
+import { PageLoader } from "../dataBindedComponents";
+
+const ErrorElement = (props: any) => {
+  return <p>error</p>;
+};
 
 const homeRoutes: ReadonlyArray<RouteObject> = [
   {
     index: true,
     element: (
-      <HomeLoader
+      <PageLoader
         requests={homeRequests}
-        errorElement={<p>error</p>}
-        successElement={<>test</>}
+        errorElement={ErrorElement}
+        successElement={Home}
+        loadingElement={<p>loading</p>}
       />
     ),
   },

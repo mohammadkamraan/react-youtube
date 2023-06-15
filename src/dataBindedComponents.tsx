@@ -1,4 +1,4 @@
+import Display from "./components/dom/display/Display";
 import Loader from "./HOC/Loader";
-import Home from "./screens/home/Home";
 
-export const HomeLoader = Loader(Home);
+export const PageLoader = Loader(Display);
