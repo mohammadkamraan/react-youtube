@@ -2,9 +2,16 @@ import { FC } from "react";
 import { Methods } from "../../constants/constants";
 import { IRequestsHandlerParameter } from "../../utils/httpClient";
 
+import classes from "./home.module.scss";
+
 const Home: FC = (props: any) => {
-  console.log(props)
-  return <div>home page</div>;
+  console.log(props);
+  return (
+    <div className={classes["flex-style"]}>
+      <p className={classes["world"]}>hello</p>
+      <p>world!</p>
+    </div>
+  );
 };
 
 export default Home;

@@ -1,0 +1,21 @@
+@mixin flex-box(
+  $direction: row,
+  $justify-content,
+  $align-items,
+  $flex-grow,
+  $gap
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-grow: $flex-grow;
+  gap: $gap;
+}
+
+@mixin grid-system($columns, $rows: null, $gap: 0.5rem) {
+  display: grid;
+  grid-template-columns: repeat($columns, minmax(0, 1fr));
+  grid-template-rows: repeat($rows, minmax(0, 1fr));
+  gap: $gap;
+}

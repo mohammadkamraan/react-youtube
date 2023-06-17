@@ -1,0 +1,10 @@
+@use "../../scss/mixins.scss";
+
+.flex-style {
+  @include mixins.flex-box(row, null, null, null, null);
+}
+
+.world {
+  height: 6rem;
+  background-color: red;
+}
