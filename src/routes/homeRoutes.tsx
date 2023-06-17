@@ -14,9 +14,9 @@ const homeRoutes: ReadonlyArray<RouteObject> = [
     element: (
       <PageLoader
         requests={homeRequests}
-        errorElement={ErrorElement}
-        successElement={Home}
         loadingElement={<p>loading</p>}
+        successElement={Home}
+        errorElement={ErrorElement}
       />
     ),
   },

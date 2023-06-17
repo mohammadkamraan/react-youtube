@@ -3,6 +3,7 @@ import { Methods } from "../../constants/constants";
 import { IRequestsHandlerParameter } from "../../utils/httpClient";
 
 const Home: FC = (props: any) => {
+  console.log(props)
   return <div>home page</div>;
 };
 
