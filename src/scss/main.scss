@@ -1,0 +1,14 @@
+@use "./variables.scss";
+@use "./mixins.scss";
+
+.app {
+  background-color: variables.$accent-color;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  display: block;
+}
+
+.flex-align-items-center {
+  @include mixins.flex-box(row, null, center, null, null);
+}

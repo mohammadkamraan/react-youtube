@@ -6,12 +6,7 @@ import classes from "./home.module.scss";
 
 const Home: FC = (props: any) => {
   console.log(props);
-  return (
-    <div className={classes["flex-style"]}>
-      <p className={classes["world"]}>hello</p>
-      <p>world!</p>
-    </div>
-  );
+  return <></>;
 };
 
 export default Home;
