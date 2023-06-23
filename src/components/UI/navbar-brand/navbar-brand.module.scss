@@ -1,0 +1,26 @@
+@use "../../../scss/main.scss";
+
+.burger-menu {
+  width: 1.6rem;
+  height: 1.6rem;
+  cursor: pointer;
+}
+
+.youtube-logo {
+  @extend .flex-align-items-center;
+  svg {
+    height: 2rem;
+    width: 2rem;
+  }
+  h1 {
+    font-family: Dafont-bold;
+    font-size: 1.2rem;
+    cursor: default;
+    user-select: none;
+  }
+}
+
+.icons-container {
+  @extend .flex-align-items-center;
+  gap: 1.2rem;
+}

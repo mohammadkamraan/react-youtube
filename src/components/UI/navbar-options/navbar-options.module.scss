@@ -1,0 +1,16 @@
+@use "../../../scss/main.scss";
+
+.options-container {
+  @extend .flex-align-items-center;
+  @extend .flex-justify-content-between;
+  width: 9rem;
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  img {
+    border-radius: 90px;
+    width: 2rem;
+    height: 2rem;
+  }
+}

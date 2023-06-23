@@ -1,0 +1,67 @@
+@use "../../../scss/main.scss";
+@use "../../../scss//variables.scss";
+
+.search-section {
+  @extend .flex-align-items-center;
+  gap: 0.4rem;
+  height: 70%;
+  width: 40rem;
+}
+
+.search-form {
+  @extend .flex-align-items-center;
+  @extend .flex-justify-content-between;
+  overflow: hidden;
+  height: 100%;
+  width: 37rem;
+  padding-left: 1rem;
+  border: 1px solid variables.$light-gray;
+  border-radius: 80px;
+  .search-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  input {
+    font-family: "Dafont-thin";
+    outline: none;
+    width: 90%;
+    height: inherit;
+    color: white;
+    background-color: inherit;
+    border: none;
+    &::placeholder {
+      font-size: 1rem;
+      color: variables.$light-gray;
+    }
+  }
+  button {
+    background-color: variables.$dark-gray;
+    width: 10%;
+    height: inherit;
+    padding: 0;
+    border: none;
+    svg {
+      color: white;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+
+.microphone {
+  @extend .flex-align-items-center;
+  @extend .flex-justify-content-center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 90px;
+  background-color: rgba(229, 231, 235, 0.1);
+  cursor: pointer;
+  &:hover {
+    background-color: variables.$light-gray;
+  }
+  svg {
+    color: white;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
