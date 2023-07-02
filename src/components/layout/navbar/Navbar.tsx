@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import NavbarBrand from "../../UI/navbar-brand/NavbarBrand";
 import NavbarOptions from "../../UI/navbar-options/NavbarOptions";
@@ -16,4 +16,4 @@ const Navbar: FC = () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);
