@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 
 // component shared interfaces
 export interface IComponentChildren {
@@ -10,5 +10,5 @@ export interface IStaticSidebarOptions {
   option: string;
   link: string;
   appQueries?: { [key: string]: string };
-  icon: HTMLElement;
+  icon: ReactElement;
 }
