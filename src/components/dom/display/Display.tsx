@@ -1,12 +1,12 @@
-import { FC, memo, ReactNode } from "react";
+import { ComponentType, FC, memo, ReactNode } from "react";
 
 interface IDisplay {
   successElement: ReactNode;
   errorElement: ReactNode;
   loadingElement: ReactNode;
   loading: boolean;
-  error: any;
-  data: any;
+  error: ComponentType;
+  data: ComponentType;
 }
 
 const Display = ({

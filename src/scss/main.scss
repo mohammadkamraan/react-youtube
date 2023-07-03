@@ -20,3 +20,11 @@
 .flex-justify-content-center {
   @include mixins.flex-box(row, center, null, null, null);
 }
+
+.flex-column-align-items-center {
+  @include mixins.flex-box(column, null, center, null, null);
+}
+
+.flex-column-justify-content-center {
+  @include mixins.flex-box(column, center, null, null, null);
+}
