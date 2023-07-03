@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import { Outlet } from "react-router";
 import Navbar from "../navbar/Navbar";
@@ -14,4 +14,4 @@ const RootLayout: FC = () => {
   );
 };
 
-export default RootLayout;
+export default memo(RootLayout);

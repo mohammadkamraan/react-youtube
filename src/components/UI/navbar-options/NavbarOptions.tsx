@@ -38,6 +38,7 @@ const NavbarOptions: FC = () => {
       <img
         loading='lazy'
         src='https://yt3.ggpht.com/rXzZ5r9s5cRcSldQnDuKq69gnOxUUFR_SZKvYVR70djZw19vTYm0JSt3LWTtuhTgALbujC8Zzw=s88-c-k-c0x00ffffff-no-rj-mo'
+        alt='profile-photo'
       />
     </div>
   );
