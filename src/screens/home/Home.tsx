@@ -5,8 +5,7 @@ import { IRequestsHandlerParameter } from "../../utils/httpClient";
 import classes from "./home.module.scss";
 
 const Home: FC = (props: any) => {
-  console.log(props);
-  return <></>;
+  return <div>home page</div>;
 };
 
 export default Home;

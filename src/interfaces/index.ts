@@ -10,5 +10,5 @@ export interface IStaticSidebarOptions {
   option: string;
   link: string;
   appQueries?: { [key: string]: string };
-  icon: ReactElement;
+  icon: ReactElement<SVGElement>;
 }

@@ -1,2 +1,13 @@
+@use "../../../scss/main.scss";
+@use "../../../scss/variables.scss";
+
 .sidebar-section {
+  @extend .flex-column-align-items-center;
+}
+
+.divider-line {
+  width: 95%;
+  margin: 0.5rem auto 0 auto;
+  background-color: variables.$dark-gray;
+  height: 1px;
 }
