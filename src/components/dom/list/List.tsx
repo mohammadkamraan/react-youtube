@@ -13,13 +13,13 @@ const List: FC<IListProps> = ({
   list,
   itemKey,
   componentProps,
-  domKey = "id",
+  domKey,
 }) => {
   return (
     <>
-      {list.map(item => (
+      {list.map((item, index) => (
         <Component
-          key={item[domKey]}
+          key={domKey ? item[domKey] : index}
           {...{ [itemKey]: item, ...componentProps }}
         />
       ))}
