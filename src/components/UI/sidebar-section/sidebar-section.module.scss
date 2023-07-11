@@ -6,7 +6,8 @@
 }
 
 .divider-line {
-  width: 90%;
-  margin: 0 auto;
-  background-color: variables.$light-gray;
+  width: 95%;
+  margin: 0.5rem auto 0 auto;
+  background-color: variables.$dark-gray;
+  height: 1px;
 }

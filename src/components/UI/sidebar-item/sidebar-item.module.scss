@@ -1,0 +1,29 @@
+@use "../../../scss/main.scss";
+@use "../../../scss/variables.scss";
+
+.sidebar-item {
+  @extend .flex-align-items-center;
+  width: 90%;
+  height: 2.4rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  font-family: "Dafont";
+  border-radius: 5px;
+  &.active {
+    background-color: variables.$light-gray;
+  }
+  &:hover {
+    background-color: variables.$light-gray;
+  }
+  div {
+    @extend .flex-align-items-center;
+    gap: 1rem;
+    width: 90%;
+    svg {
+      color: white;
+      stroke: white;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}

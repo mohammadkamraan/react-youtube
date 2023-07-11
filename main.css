@@ -100,3 +100,25 @@ video {
   font-family: Dafont;
   src: url("/public/fonts/youtube-sans-medium.woff2");
 }
+
+/* scrollbar styles */
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}

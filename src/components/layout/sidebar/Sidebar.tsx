@@ -2,6 +2,7 @@ import { FC, memo } from "react";
 
 import List from "../../dom/list/List";
 import SidebarSection from "../../UI/sidebar-section/SidebarSection";
+import SidebarItem from "../../UI/sidebar-item/SidebarItem";
 
 import {
   exploreSection,
@@ -17,8 +18,19 @@ const Sidebar: FC = () => {
   return (
     <aside className={styles["sidebar"]}>
       <SidebarSection hasLine>
-        {/* <List /> */}
-        <>test content</>
+        <List list={genericSection} component={SidebarItem} itemKey='option' />
+      </SidebarSection>
+      <SidebarSection hasLine>
+        <List list={feedSection} component={SidebarItem} itemKey='option' />
+      </SidebarSection>
+      <SidebarSection hasLine>
+        <List list={exploreSection} component={SidebarItem} itemKey='option' />
+      </SidebarSection>
+      <SidebarSection hasLine>
+        <List list={moreFromYoutube} component={SidebarItem} itemKey='option' />
+      </SidebarSection>
+      <SidebarSection hasLine>
+        <List list={settingsSection} component={SidebarItem} itemKey='option' />
       </SidebarSection>
     </aside>
   );

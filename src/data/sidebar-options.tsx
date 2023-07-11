@@ -11,7 +11,6 @@ export const genericSection: ReadonlyArray<IStaticSidebarOptions> = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6'
       >
         <path
           strokeLinecap='round'
@@ -30,13 +29,16 @@ export const genericSection: ReadonlyArray<IStaticSidebarOptions> = [
         height='256'
         viewBox='0 0 256 256'
       >
-        <path
-          fill='#000'
-          strokeMiterlimit='10'
-          strokeWidth='0'
-          d='M69.186 38.498c-1.406-.795-2.751-1.651-4.34-2.568a137.856 137.856 0 014.463-2.629c6.541-3.546 10.148-10.759 9.047-18.095-1.59-12.042-15.467-19.01-25.981-13.02C41.616 8.361 30.857 14.413 20.22 20.77c-8.436 5.074-9.659 11.798-8.314 19.745.856 4.952 4.157 8.619 8.497 11.126 1.528.856 2.995 1.712 4.646 2.69-1.834 1.1-3.484 2.078-5.257 2.995-7.825 4.952-10.515 15.099-6.113 23.291 4.646 8.62 15.405 11.921 24.024 7.275 9.292-5.257 18.584-10.637 27.815-16.016 2.201-1.284 4.524-2.445 6.48-4.035 9.842-8.192 8.375-23.046-2.812-29.343zM36.359 58.549V31.835l23.108 13.327-23.108 13.387z'
-          transform='matrix(2.81 0 0 2.81 1.407 1.407)'
-        ></path>
+        <g fill='#000' strokeMiterlimit='10' strokeWidth='2'>
+          <path
+            d='M30.063 90c-6.765 0-13.323-3.634-16.759-10.009-4.669-8.691-1.799-19.627 6.535-24.901.049-.03.099-.06.15-.086.673-.349 1.33-.708 1.989-1.081-.487-.279-.972-.555-1.464-.83-5.12-2.956-8.263-7.114-9.115-12.038-1.115-6.588-1.112-14.914 8.886-20.927 7.687-4.595 15.564-9.093 23.183-13.444 2.527-1.443 5.056-2.887 7.585-4.338C56.332-.662 62.85-.783 68.489 2.017c5.692 2.826 9.569 8.152 10.373 14.247 1.166 7.769-2.72 15.545-9.677 19.315a175.3 175.3 0 00-1.313.751 59.1 59.1 0 001.227.715c5.715 3.216 9.323 8.684 9.899 14.999.568 6.244-1.953 12.194-6.916 16.325-1.584 1.287-3.325 2.268-5.008 3.216-.487.274-.975.549-1.455.83-7.804 4.547-17.067 9.922-26.608 15.32A18.808 18.808 0 0130.063 90zm-8.156-31.484c-6.513 4.174-8.746 12.756-5.08 19.579 3.927 7.284 13.009 10.041 20.251 6.138 9.485-5.367 18.734-10.735 26.526-15.275.497-.29 1.002-.574 1.507-.86 1.609-.906 3.129-1.762 4.432-2.821 3.918-3.26 5.918-7.958 5.472-12.872-.454-4.984-3.326-9.314-7.88-11.877a91.766 91.766 0 01-2.191-1.292c-.628-.378-1.277-.769-1.975-1.172a2.003 2.003 0 01-.05-3.436 131.767 131.767 0 014.329-2.551c5.513-2.987 8.576-9.111 7.654-15.256-.635-4.808-3.695-8.99-8.192-11.223-4.445-2.207-9.558-2.125-13.671.219-2.526 1.45-5.057 2.895-7.587 4.339-7.601 4.341-15.462 8.83-23.11 13.401-6.346 3.817-8.376 8.691-7 16.821.65 3.762 3.056 6.871 7.149 9.234a209.02 209.02 0 014.46 2.583 2.001 2.001 0 01.01 3.436c-1.745 1.05-3.333 1.991-5.054 2.885z'
+            transform='matrix(2.81 0 0 2.81 1.407 1.407)'
+          ></path>
+          <path
+            d='M36.741 59.95a2 2 0 01-2.001-2.001V32.417a1.999 1.999 0 013-1.732l22.085 12.737a2 2 0 01.004 3.464L37.744 59.681a2 2 0 01-1.003.269zm2-24.07v18.6l16.088-9.321-16.088-9.279z'
+            transform='matrix(2.81 0 0 2.81 1.407 1.407)'
+          ></path>
+        </g>
       </svg>
     ),
     link: "/shorts",
@@ -129,7 +131,6 @@ export const feedSection: ReadonlyArray<IStaticSidebarOptions> = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6'
       >
         <path
           strokeLinecap='round'
@@ -150,7 +151,6 @@ export const feedSection: ReadonlyArray<IStaticSidebarOptions> = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6'
       >
         <path
           strokeLinecap='round'
@@ -174,7 +174,6 @@ export const exploreSection: ReadonlyArray<IStaticSidebarOptions> = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6'
       >
         <path
           strokeLinecap='round'
@@ -200,7 +199,6 @@ export const exploreSection: ReadonlyArray<IStaticSidebarOptions> = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6'
       >
         <path
           strokeLinecap='round'
@@ -256,7 +254,6 @@ export const exploreSection: ReadonlyArray<IStaticSidebarOptions> = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6'
       >
         <path
           strokeLinecap='round'
@@ -298,7 +295,6 @@ export const exploreSection: ReadonlyArray<IStaticSidebarOptions> = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6'
       >
         <path
           strokeLinecap='round'
@@ -412,7 +408,6 @@ export const settingsSection: ReadonlyArray<IStaticSidebarOptions> = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6'
       >
         <path
           strokeLinecap='round'
@@ -437,7 +432,6 @@ export const settingsSection: ReadonlyArray<IStaticSidebarOptions> = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6'
       >
         <path
           strokeLinecap='round'
@@ -457,7 +451,6 @@ export const settingsSection: ReadonlyArray<IStaticSidebarOptions> = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6'
       >
         <path
           strokeLinecap='round'
@@ -477,7 +470,6 @@ export const settingsSection: ReadonlyArray<IStaticSidebarOptions> = [
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6'
       >
         <path
           strokeLinecap='round'

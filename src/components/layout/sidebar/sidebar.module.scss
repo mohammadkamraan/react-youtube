@@ -1,4 +1,9 @@
 .sidebar {
-  width: 15%;
-  height: 92vh;
+  grid-column: span 2 / span 2;
+  height: 90vh;
+  padding-left: 1.2rem;
+  overflow-y: hidden;
+  &:hover {
+    overflow-y: scroll;
+  }
 }

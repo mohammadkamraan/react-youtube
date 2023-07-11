@@ -1,8 +1,8 @@
-import { FC, memo } from "react";
+import { ComponentType, FC, memo } from "react";
 
 interface IListProps {
-  component: FC;
-  list: any[];
+  component: ComponentType<any>;
+  list: any[] | ReadonlyArray<any>;
   itemKey: string;
   componentProps?: { [key: string]: any };
   domKey?: string;
