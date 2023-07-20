@@ -1,0 +1,14 @@
+@use "../../../scss/variables.scss";
+.text {
+  color: white;
+  font-family: "Dafont";
+  &.gray {
+    color: variables.$base-gray;
+  }
+  &.thin {
+    font-family: "Dafont-thin";
+  }
+  &.bold {
+    font-family: "Dafont-bold";
+  }
+}
