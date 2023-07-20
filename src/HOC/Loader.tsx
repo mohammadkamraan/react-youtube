@@ -26,7 +26,7 @@ const Loader =
         data={data}
         error={error}
         loading={loading}
-        successElement={<SuccessElement data={data} loader={loader} />}
+        successElement={<SuccessElement {...data} loader={loader} />}
         errorElement={<ErrorElement error={error} loader={loader} />}
         loadingElement={loadingElement}
       />

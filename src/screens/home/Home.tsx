@@ -16,7 +16,6 @@ export const homeRequests: IRequestsHandlerParameter = {
       method: Methods.GET,
       url: "https://jsonplaceholder.typicode.com/posts",
     },
-    { method: Methods.GET, url: "https://jsonplaceholder.typicode.com/photos" },
   ],
-  expectedData: [{ dataKey: "posts" }, { dataKey: "photos" }],
+  expectedData: [{ dataKey: "posts" }],
 };
