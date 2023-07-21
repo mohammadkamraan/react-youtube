@@ -1,9 +1,8 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 
 import styles from "./search-form.module.scss";
 
 const SearchForm: FC = () => {
-  const [isFocused, setIsFocused] = useState(false);
   return (
     <div className={styles["search-section"]}>
       <form
@@ -25,15 +24,7 @@ const SearchForm: FC = () => {
             d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z'
           />
         </svg> */}
-        <input
-          onFocus={() => {
-            setIsFocused(true);
-          }}
-          onBlur={() => {
-            setIsFocused(false);
-          }}
-          placeholder='Search'
-        />
+        <input placeholder='Search' />
         {/* search button */}
         <button type='submit'>
           <svg
