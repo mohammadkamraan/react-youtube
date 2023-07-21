@@ -23,7 +23,7 @@ interface IVideoCard {
 
 const VideoCard: FC<IVideoCard> = props => {
   const [play, setPlay] = useState<boolean>(false);
-  const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
+  const [timerId, setTimerId] = useState<any>(null);
 
   const mouseEnterHandler = () => {
     const timerId = setTimeout(() => {
@@ -34,7 +34,7 @@ const VideoCard: FC<IVideoCard> = props => {
   };
 
   const mouseLeaveHandler = () => {
-    clearTimeout(timerId as NodeJS.Timeout);
+    clearTimeout(timerId as any);
     setPlay(false);
   };
 
