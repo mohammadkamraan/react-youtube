@@ -1,12 +1,10 @@
 import { RouteObject } from "react-router";
 
 import Home, { homeRequests } from "../screens/home/Home";
+import HomeLoading from "../screens/home/HomeLoading";
+import HomeError from "../screens/home/HomeError";
 
 import { PageLoader } from "../dataBindedComponents";
-
-const ErrorElement = (props: any) => {
-  return <p>error</p>;
-};
 
 const homeRoutes: ReadonlyArray<RouteObject> = [
   {
@@ -14,9 +12,9 @@ const homeRoutes: ReadonlyArray<RouteObject> = [
     element: (
       <PageLoader
         requests={homeRequests}
-        loadingElement={<p>loading</p>}
+        loadingElement={<HomeLoading />}
         successElement={Home}
-        errorElement={ErrorElement}
+        errorElement={HomeError}
       />
     ),
   },

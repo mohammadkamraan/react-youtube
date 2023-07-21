@@ -13,6 +13,10 @@
   @include mixins.flex-box(row, null, center, null, null);
 }
 
+.flex-align-items-start {
+  @include mixins.flex-box(row, null, flex-start, null, null);
+}
+
 .flex-justify-content-between {
   @include mixins.flex-box(row, space-between, null, null, null);
 }
@@ -27,4 +31,9 @@
 
 .flex-column-justify-content-center {
   @include mixins.flex-box(column, center, null, null, null);
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

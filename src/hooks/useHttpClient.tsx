@@ -5,6 +5,8 @@ import {
   IRequestsHandlerParameter,
 } from "../utils/httpClient";
 
+export type Loader = (parameter: IRequestsHandlerParameter) => Promise<void>;
+
 const useHttpClient = (requests: IRequestsHandlerParameter) => {
   const [loading, setLoading] = useState<boolean | null>(null);
   const [data, setData] = useState<null | any>(null);
@@ -15,7 +17,7 @@ const useHttpClient = (requests: IRequestsHandlerParameter) => {
     [JSON.stringify(requests)]
   );
 
-  const loader = async (requests: IRequestsHandlerParameter) => {
+  const loader: Loader = async (requests: IRequestsHandlerParameter) => {
     setLoading(true);
     setError(null);
     setData(null);

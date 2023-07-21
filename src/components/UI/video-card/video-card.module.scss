@@ -1,0 +1,39 @@
+@use "../../../scss/main.scss";
+
+.video-card {
+  grid-column: span 4 / span 4;
+  text-decoration: none;
+  height: 18rem;
+}
+
+.detail {
+  @extend .flex-align-items-start;
+  gap: 1rem;
+  .video-title {
+    overflow: hidden;
+    display: block;
+    max-height: 4.4rem;
+    -webkit-line-clamp: 2;
+    display: box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+}
+
+.video-wrapper {
+  @extend .transition-all;
+  transition-duration: 500ms;
+  height: 14rem;
+  border-radius: 15px;
+  overflow: hidden;
+  &:hover {
+    border-radius: 0;
+  }
+}
+
+.video-dynamic-details {
+  @extend .flex-align-items-center;
+  gap: 1rem;
+}
