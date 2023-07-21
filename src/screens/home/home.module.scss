@@ -1,4 +1,5 @@
-@use "../../scss/mixins.scss";
+@use "../../scss/main.scss";
+@use "../../scss/variables.scss";
 
 .wrapper {
   grid-column: span 10 / span 10;
@@ -6,12 +7,34 @@
 }
 
 .videos-wrapper {
-  height: 100%;
+  height: 82vh;
   overflow-y: hidden;
   &:hover {
     overflow-y: scroll;
   }
   .video {
     grid-column: span 4 / span 4;
+  }
+}
+
+// loading section
+
+// error section
+
+.home-error {
+  grid-column: span 10 / span 10;
+  height: 82vh;
+  width: 100%;
+  @extend .flex-align-items-center;
+  @extend .flex-justify-content-center;
+  button {
+    background-color: variables.$primary-color;
+    color: white;
+    font: "Dafont";
+    width: 20rem;
+    height: 3rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
   }
 }

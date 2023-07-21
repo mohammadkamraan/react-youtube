@@ -22,16 +22,26 @@ interface IVideoCard {
 }
 
 const VideoCard: FC<IVideoCard> = props => {
-  const [play, setPlay] = useState(false);
+  const [play, setPlay] = useState<boolean>(false);
+  const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null);
+
+  const mouseEnterHandler = () => {
+    const timerId = setTimeout(() => {
+      setPlay(true);
+    }, 3000);
+
+    setTimerId(timerId);
+  };
+
+  const mouseLeaveHandler = () => {
+    clearTimeout(timerId as NodeJS.Timeout);
+    setPlay(false);
+  };
 
   return (
     <Link
-      onMouseEnter={() => {
-        setPlay(true);
-      }}
-      onMouseLeave={() => {
-        setPlay(false);
-      }}
+      onMouseEnter={mouseEnterHandler}
+      onMouseLeave={mouseLeaveHandler}
       to={props.link}
       className={styles["video-card"] + " " + props.className}
     >
@@ -41,12 +51,14 @@ const VideoCard: FC<IVideoCard> = props => {
           url={VIDEOS_BASE_URL + props.videoId}
           width='100%'
           height='100%'
+          light={!play}
+          playIcon={<></>}
         />
       </div>
       <div className={styles["detail"]}>
         <Avatar avatarSource={props.avatarUrl} lazyLoad />
         <div>
-          <Text>
+          <Text className={styles["video-title"]}>
             <p>{props.title}</p>
           </Text>
           <Text color='gray'>

@@ -5,6 +5,7 @@ import { IComponentChildren } from "../../../interfaces";
 import styles from "./text.module.scss";
 
 interface IText extends IComponentChildren {
+  className?: string;
   color?: "white" | "gray";
   fontSize?: string;
   fontWight?: "normal" | "bold" | "thin";
@@ -12,7 +13,7 @@ interface IText extends IComponentChildren {
 
 const Text: FC<IText> = props => {
   const classNamesGenerator = () => {
-    let classes = styles["text"];
+    let classes = styles["text"] + " " + props.className;
     if (props.color) {
       classes += " ";
       classes += styles[props.color];

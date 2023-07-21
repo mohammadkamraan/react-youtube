@@ -1,0 +1,35 @@
+@use "../../../scss/variables.scss";
+@use "../../../scss/main.scss";
+
+.video-wrapper {
+  grid-column: span 4 / span 4;
+  text-decoration: none;
+  height: 18rem;
+}
+
+.video-skeleton {
+  background-color: variables.$skeleton-color;
+  border-radius: 5px;
+  width: 100%;
+  height: 70%;
+  margin-bottom: 0.5rem;
+}
+
+.details-skeleton {
+  @extend .flex-align-items-start;
+  gap: 1rem;
+  .avatar-skeleton {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 99999px;
+    background-color: variables.$skeleton-color;
+  }
+}
+
+.title-skeleton {
+  background-color: variables.$skeleton-color;
+  border-radius: 5px;
+  width: 16rem;
+  height: 1rem;
+  margin-bottom: 0.5rem;
+}
