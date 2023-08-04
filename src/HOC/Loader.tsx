@@ -17,16 +17,14 @@ const Loader =
     errorElement: ErrorElement,
     loadingElement,
   }: ILoaderComponent) => {
-    const [loading, data, error, loader, instance] = useHttpClient(HttpClient);
+    const [loading, data, error, loader] = useHttpClient(HttpClient);
 
     return (
       <Component
         data={data}
         error={error}
         loading={loading}
-        successElement={
-          <SuccessElement {...data} loader={loader} instance={instance} />
-        }
+        successElement={<SuccessElement {...data} loader={loader} />}
         errorElement={<ErrorElement error={error} loader={loader} />}
         loadingElement={loadingElement}
       />

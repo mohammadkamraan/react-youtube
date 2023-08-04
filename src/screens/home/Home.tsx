@@ -29,6 +29,7 @@ const Home: FC = (props: any) => {
           )}
         />
       </GridSystem>
+      <button onClick={() => props.loader(HomeRequests)}>load</button>
     </div>
   );
 };
@@ -38,6 +39,16 @@ export default Home;
 export class HomeRequests extends HttpClient {
   constructor(urlParams: Readonly<Params<string>>, location: Location) {
     super(urlParams, location);
+  }
+
+  public static newInstance(
+    urlParams: Readonly<Params<string>>,
+    location: Location
+  ) {
+    if (!HttpClient.httpClientInstance) {
+      HttpClient.httpClientInstance = new HomeRequests(urlParams, location);
+    }
+    return HttpClient.httpClientInstance;
   }
 
   append(): void {
