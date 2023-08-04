@@ -1,3 +1,4 @@
+import { AxiosError } from "axios";
 import { Location, Params } from "react-router";
 import { axiosInstance } from "../API/api";
 
@@ -23,11 +24,17 @@ interface IRequestsData {
 }
 
 export class HttpClient {
+  public static httpClientInstance: null | HttpClient;
   private _urlParams!: Readonly<Params<string>>;
   private _location!: Location;
   private _requests!: IRequestsHandlerParameter;
+  private _data: any = null;
+  private _error: AxiosError | null = null;
 
-  constructor(urlParams: Readonly<Params<string>>, location: Location) {
+  protected constructor(
+    urlParams: Readonly<Params<string>>,
+    location: Location
+  ) {
     this._urlParams = urlParams;
     this._location = location;
   }
@@ -48,9 +55,34 @@ export class HttpClient {
     this._requests = requests;
   }
 
+  get data() {
+    return this._data;
+  }
+
+  set data(data) {
+    this._data = data;
+  }
+
+  get error() {
+    return this._error;
+  }
+
+  set error(error) {
+    this._error = error;
+  }
+
+  public static newInstance(
+    urlParams: Readonly<Params<string>>,
+    location: Location
+  ) {
+    if (!HttpClient.httpClientInstance) {
+      HttpClient.httpClientInstance = new HttpClient(urlParams, location);
+    }
+    return HttpClient.httpClientInstance;
+  }
+
   public async requestsHandler() {
     let data: IRequestsData | null = null;
-    let error: any = null;
     try {
       const response = await Promise.all(
         this.requests.requests.map(request => this.requestHandler(request))
@@ -63,9 +95,9 @@ export class HttpClient {
         };
       }
     } catch (err) {
-      error = err;
+      this.error = err as AxiosError;
     }
-    return [data, error];
+    this.data = data;
   }
 
   private async requestHandler(option: IHttpClientOptions) {

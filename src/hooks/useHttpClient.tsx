@@ -5,37 +5,33 @@ import { HttpClient } from "../utils/httpClient";
 
 export type Loader = (parameter: any) => Promise<void>;
 
-const useHttpClient = (HttpClient: HttpClient) => {
+const useHttpClient = (HttpService: HttpClient) => {
   const location = useLocation();
   const params = useParams();
   const [loading, setLoading] = useState<boolean | null>(null);
   const [data, setData] = useState<null | any>(null);
   const [error, setError] = useState<null | any>(null);
-  const [instance, setInstance] = useState<any>(null);
 
   const stringifiedHttpClient: string = useMemo(
     () => JSON.stringify(HttpClient),
     [JSON.stringify(HttpClient)]
   );
 
-  const loader: Loader = async HttpClient => {
-    const httpClient: HttpClient = new HttpClient(params, location);
+  const loader: Loader = async Http => {
+    const httpClient: HttpClient = Http.newInstance(params, location);
     httpClient.append();
     setLoading(true);
-    setError(null);
-    setData(null);
-    const [data, error] = await httpClient.requestsHandler();
-    setData(data);
-    setError(error);
+    await httpClient.requestsHandler();
+    setData(httpClient.data);
+    setError(httpClient.error);
     setLoading(false);
-    setInstance(httpClient);
   };
 
   useEffect(() => {
-    loader(HttpClient);
+    loader(HttpService);
   }, [stringifiedHttpClient]);
 
-  return [loading, data, error, loader, instance] as const;
+  return [loading, data, error, loader] as const;
 };
 
 export default useHttpClient;
