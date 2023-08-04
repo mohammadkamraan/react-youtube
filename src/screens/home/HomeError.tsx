@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { homeRequests } from "./Home";
+import { HomeRequests } from "./Home";
 
 import { IErrorComponents } from "../../interfaces";
 import Text from "../../components/UI/text/Text";
@@ -15,7 +15,7 @@ const HomeError: FC<IErrorComponents> = ({ error, loader }) => {
         <Text color='white'>
           <p>{error.message}</p>
         </Text>
-        <button onClick={() => loader(homeRequests)}>Try again</button>
+        <button onClick={() => loader(HomeRequests)}>Try again</button>
       </div>
     </div>
   );

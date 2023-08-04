@@ -1,6 +1,6 @@
 import { RouteObject } from "react-router";
 
-import Home, { homeRequests } from "../screens/home/Home";
+import Home, { HomeRequests } from "../screens/home/Home";
 import HomeLoading from "../screens/home/HomeLoading";
 import HomeError from "../screens/home/HomeError";
 
@@ -11,7 +11,7 @@ const homeRoutes: ReadonlyArray<RouteObject> = [
     index: true,
     element: (
       <PageLoader
-        requests={homeRequests}
+        HttpClient={HomeRequests}
         loadingElement={<HomeLoading />}
         successElement={Home}
         errorElement={HomeError}

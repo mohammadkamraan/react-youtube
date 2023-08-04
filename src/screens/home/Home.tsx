@@ -1,11 +1,12 @@
 import { FC } from "react";
 import { Methods } from "../../constants/constants";
-import { IRequestsHandlerParameter } from "../../utils/httpClient";
+import { HttpClient } from "../../utils/httpClient";
 import GridSystem from "../../components/UI/grid-system/GridSystem";
 
 import styles from "./home.module.scss";
 import VideoCard from "../../components/UI/video-card/VideoCard";
 import ControlledList from "../../components/dom/controlled-list/ControlledList";
+import { Location, Params } from "react-router";
 
 const Home: FC = (props: any) => {
   return (
@@ -34,19 +35,27 @@ const Home: FC = (props: any) => {
 
 export default Home;
 
-export const homeRequests: IRequestsHandlerParameter = {
-  requests: [
-    {
-      method: Methods.GET,
-      url: "/search",
-      params: {
-        q: "new",
-        part: "snippet,id",
-        regionCode: "US",
-        maxResults: "20",
-        order: "date",
-      },
-    },
-  ],
-  expectedData: [{ dataKey: "videos" }],
-};
+export class HomeRequests extends HttpClient {
+  constructor(urlParams: Readonly<Params<string>>, location: Location) {
+    super(urlParams, location);
+  }
+
+  append(): void {
+    this.requests = {
+      requests: [
+        {
+          method: Methods.GET,
+          url: "/search",
+          params: {
+            q: "new",
+            part: "snippet,id",
+            regionCode: "US",
+            maxResults: "20",
+            order: "date",
+          },
+        },
+      ],
+      expectedData: [{ dataKey: "videos" }],
+    };
+  }
+}
