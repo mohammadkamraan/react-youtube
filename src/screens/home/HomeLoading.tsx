@@ -11,7 +11,7 @@ const HomeLoading: FC = () => {
     <div className={styles["wrapper"]}>
       <GridSystem className={styles["videos-wrapper"]} columns={12} gap='1rem'>
         <List
-          list={new Array(20).fill(0)}
+          list={new Array(20).fill(undefined)}
           itemKey='key'
           component={VideoCardLoading}
         />

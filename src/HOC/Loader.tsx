@@ -2,10 +2,8 @@ import { ReactNode } from "react";
 
 import useHttpClient from "../hooks/useHttpClient";
 
-import { IRequestsHandlerParameter } from "../utils/httpClient";
-
 interface ILoaderComponent {
-  requests: IRequestsHandlerParameter;
+  HttpClient: any;
   errorElement: any;
   successElement: any;
   loadingElement: ReactNode;
@@ -14,19 +12,21 @@ interface ILoaderComponent {
 const Loader =
   (Component: any) =>
   ({
-    requests,
+    HttpClient,
     successElement: SuccessElement,
     errorElement: ErrorElement,
     loadingElement,
   }: ILoaderComponent) => {
-    const [loading, data, error, loader] = useHttpClient(requests);
+    const [loading, data, error, loader, instance] = useHttpClient(HttpClient);
 
     return (
       <Component
         data={data}
         error={error}
         loading={loading}
-        successElement={<SuccessElement {...data} loader={loader} />}
+        successElement={
+          <SuccessElement {...data} loader={loader} instance={instance} />
+        }
         errorElement={<ErrorElement error={error} loader={loader} />}
         loadingElement={loadingElement}
       />
