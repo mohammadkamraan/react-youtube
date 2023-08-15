@@ -19,7 +19,7 @@ const Home: FC = (props: any) => {
               videoId={item.id}
               avatarUrl='https://yt3.ggpht.com/rXzZ5r9s5cRcSldQnDuKq69gnOxUUFR_SZKvYVR70djZw19vTYm0JSt3LWTtuhTgALbujC8Zzw=s88-c-k-c0x00ffffff-no-rj-mo'
               channel={item.snippet.channelTitle}
-              link='test'
+              link={"watch/" + item.id.videoId}
               previewImage=''
               publishedAt={item.snippet.publishedAt}
               title={item.snippet.title}
