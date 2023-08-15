@@ -29,7 +29,6 @@ const Home: FC = (props: any) => {
           )}
         />
       </GridSystem>
-      <button onClick={() => props.loader(HomeRequests)}>load</button>
     </div>
   );
 };
