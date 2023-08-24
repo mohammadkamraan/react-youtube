@@ -18,8 +18,9 @@ const useHttpClient = (HttpService: HttpClient) => {
   );
 
   const loader: Loader = async Http => {
-    const httpClient: HttpClient = Http.newInstance(params, location);
-    httpClient.append();
+    const httpClient: HttpClient = new Http();
+    httpClient.urlParams = params;
+    httpClient.location = location;
     setLoading(true);
     await httpClient.requestsHandler();
     setData(httpClient.data);

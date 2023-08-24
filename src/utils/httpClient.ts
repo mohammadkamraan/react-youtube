@@ -23,28 +23,27 @@ interface IRequestsData {
   };
 }
 
-export class HttpClient {
-  public static httpClientInstance: null | HttpClient;
+export abstract class HttpClient {
   private _urlParams!: Readonly<Params<string>>;
   private _location!: Location;
   private _requests!: IRequestsHandlerParameter;
   private _data: any = null;
   private _error: AxiosError | null = null;
 
-  protected constructor(
-    urlParams: Readonly<Params<string>>,
-    location: Location
-  ) {
-    this._urlParams = urlParams;
-    this._location = location;
-  }
-
   get urlParams() {
     return this._urlParams;
   }
 
+  set urlParams(value: Readonly<Params<string>>) {
+    this._urlParams = value;
+  }
+
   get location() {
     return this._location;
+  }
+
+  set location(value: Location) {
+    this._location = value;
   }
 
   get requests() {
@@ -71,18 +70,9 @@ export class HttpClient {
     this._error = error;
   }
 
-  public static newInstance(
-    urlParams: Readonly<Params<string>>,
-    location: Location
-  ) {
-    if (!HttpClient.httpClientInstance) {
-      HttpClient.httpClientInstance = new HttpClient(urlParams, location);
-    }
-    return HttpClient.httpClientInstance;
-  }
-
   public async requestsHandler() {
     let data: IRequestsData | null = null;
+    this.requests = this.append();
     try {
       const response = await Promise.all(
         this.requests.requests.map(request => this.requestHandler(request))
@@ -117,7 +107,5 @@ export class HttpClient {
     return [response, errorData, requestStatus];
   }
 
-  append() {
-    return;
-  }
+  abstract append(): IRequestsHandlerParameter;
 }
