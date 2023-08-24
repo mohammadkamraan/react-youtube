@@ -6,7 +6,6 @@ import GridSystem from "../../components/UI/grid-system/GridSystem";
 import styles from "./home.module.scss";
 import VideoCard from "../../components/UI/video-card/VideoCard";
 import ControlledList from "../../components/dom/controlled-list/ControlledList";
-import { Location, Params } from "react-router";
 
 const Home: FC = (props: any) => {
   return (
@@ -36,22 +35,8 @@ const Home: FC = (props: any) => {
 export default Home;
 
 export class HomeRequests extends HttpClient {
-  constructor(urlParams: Readonly<Params<string>>, location: Location) {
-    super(urlParams, location);
-  }
-
-  public static newInstance(
-    urlParams: Readonly<Params<string>>,
-    location: Location
-  ) {
-    if (!HttpClient.httpClientInstance) {
-      HttpClient.httpClientInstance = new HomeRequests(urlParams, location);
-    }
-    return HttpClient.httpClientInstance;
-  }
-
-  append(): void {
-    this.requests = {
+  append() {
+    return {
       requests: [
         {
           method: Methods.GET,
