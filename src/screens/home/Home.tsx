@@ -16,12 +16,12 @@ const Home: FC = (props: any) => {
           renderer={item => (
             <VideoCard
               key={item.id.videoId}
-              videoId={item.id.videoId}
+              videoId={item.id}
               avatarUrl='https://yt3.ggpht.com/rXzZ5r9s5cRcSldQnDuKq69gnOxUUFR_SZKvYVR70djZw19vTYm0JSt3LWTtuhTgALbujC8Zzw=s88-c-k-c0x00ffffff-no-rj-mo'
               channel={item.snippet.channelTitle}
               link='test'
               previewImage=''
-              publishedAt={item.snippet.publishTime}
+              publishedAt={item.snippet.publishedAt}
               title={item.snippet.title}
               views={20}
             />
@@ -40,13 +40,14 @@ export class HomeRequests extends HttpClient {
       requests: [
         {
           method: Methods.GET,
-          url: "/search",
+          url: "/videos",
           params: {
             q: "new",
             part: "snippet,id",
             regionCode: "US",
             maxResults: "20",
             order: "date",
+            chart: "mostPopular",
           },
         },
       ],
