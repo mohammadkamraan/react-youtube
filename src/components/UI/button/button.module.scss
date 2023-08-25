@@ -1,0 +1,28 @@
+@use "../../../scss/main.scss";
+@use "../../../scss/variables.scss";
+
+.button {
+  @extend .flex-align-items-center;
+  @extend .flex-justify-content-center;
+  &.light-color {
+    background-color: rgba(229, 231, 235, 0.3);
+  }
+  &.dark-color {
+    color: white;
+    background-color: rgba(229, 231, 235, 0.1);
+    &:hover {
+      background-color: variables.$light-gray;
+    }
+  }
+  &.full-rounded {
+    border-radius: 90px;
+  }
+  &.left-rounded {
+    border-top-left-radius: 90px;
+    border-bottom-left-radius: 90px;
+  }
+  &.right-rounded {
+    border-top-right-radius: 90px;
+    border-bottom-right-radius: 90px;
+  }
+}

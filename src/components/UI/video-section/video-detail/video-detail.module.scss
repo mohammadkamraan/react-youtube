@@ -1,4 +1,14 @@
 @use "../../../../scss/main.scss";
+
 .wrapper {
   @extend .flex-justify-content-between;
+  @extend .flex-align-items-center;
+}
+
+.button-with-svg {
+  svg {
+    color: white;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
 }
