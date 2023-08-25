@@ -1,0 +1,4 @@
+@use "../../../../scss/main.scss";
+.wrapper {
+  @extend .flex-justify-content-between;
+}

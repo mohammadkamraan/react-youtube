@@ -8,11 +8,11 @@ import HomeError from "../screens/home/HomeError";
 
 export const videoRoutes: ReadonlyArray<RouteObject> = [
   {
-    path: "watch/:videoId",
+    path: "watch/:videoId/:categoryId",
     element: (
       <PageLoader
         successElement={Video}
-        errorElement={HomeError}
+        errorElement={Video}
         loadingElement={<VideoLoading />}
         HttpClient={VideoRequest}
       />

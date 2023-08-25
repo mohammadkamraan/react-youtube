@@ -1,35 +1,33 @@
 import { FC } from "react";
-import { Location, Params, useParams } from "react-router";
-import { Methods, VIDEOS_BASE_URL } from "../../constants/constants";
-import { HttpClient } from "../../utils/httpClient";
-import Player from "react-player/youtube";
+import { useParams } from "react-router";
+import { Methods } from "../../constants/constants";
+import { HttpClient, IRequestsHandlerParameter } from "../../utils/httpClient";
+
+import styles from "./video.module.scss";
+import VideoSection from "../../components/UI/video-section/VideoSection";
+
+import videoData from "../../utils/data/video.json";
+import videoComments from "../../utils/data/comments.json";
+import relatedVideos from "../../utils/data/relatedVideos.json";
 
 const Video: FC = props => {
-  const { videoId } = useParams();
+  const { videoId }: any = useParams();
+  console.log(videoComments);
   return (
-    <>
-      <Player url={VIDEOS_BASE_URL + videoId} controls />
-    </>
+    <main className={styles["wrapper"]}>
+      <VideoSection
+        videoId={videoId}
+        videoDetails={videoData.items[0]}
+        comments={videoComments}
+      />
+      <div className={styles["related-video-section"]}></div>
+    </main>
   );
 };
 
 export class VideoRequest extends HttpClient {
-  constructor(urlParams: Readonly<Params<string>>, location: Location) {
-    super(urlParams, location);
-  }
-
-  public static newInstance(
-    urlParams: Readonly<Params<string>>,
-    location: Location
-  ) {
-    if (!HttpClient.httpClientInstance) {
-      HttpClient.httpClientInstance = new VideoRequest(urlParams, location);
-    }
-    return HttpClient.httpClientInstance;
-  }
-
-  append() {
-    this.requests = {
+  append(): IRequestsHandlerParameter {
+    return {
       requests: [
         {
           method: Methods.GET,
@@ -41,28 +39,28 @@ export class VideoRequest extends HttpClient {
         },
         {
           method: Methods.GET,
-          url: "commentThreads",
+          url: "search",
           params: {
-            part: "snippet",
-            videoId: this.urlParams.videoId as string,
-            maxResults: "10",
+            part: "id,snippet",
+            videoCategoryId: this.urlParams.categoryId as string,
+            maxResults: "1",
+            type: "video",
           },
         },
         {
           method: Methods.GET,
-          url: "search",
+          url: "commentThreads",
           params: {
-            relatedToVideoId: this.urlParams.videoId as string,
             part: "id,snippet",
-            type: "video",
-            maxResults: "5",
+            maxResults: "1",
+            videoId: this.urlParams.videoId as string,
           },
         },
       ],
       expectedData: [
         { dataKey: "video" },
-        { dataKey: "videoComments" },
         { dataKey: "relatedVideos" },
+        { dataKey: "comments" },
       ],
     };
   }

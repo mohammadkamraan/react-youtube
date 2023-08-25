@@ -8,6 +8,7 @@ import VideoCard from "../../components/UI/video-card/VideoCard";
 import ControlledList from "../../components/dom/controlled-list/ControlledList";
 
 const Home: FC = (props: any) => {
+  console.log(props);
   return (
     <div className={styles["wrapper"]}>
       <GridSystem columns={12} gap='1rem' className={styles["videos-wrapper"]}>
@@ -15,11 +16,11 @@ const Home: FC = (props: any) => {
           list={props.videos.data.items}
           renderer={item => (
             <VideoCard
-              key={item.id.videoId}
+              key={item.id}
               videoId={item.id}
               avatarUrl='https://yt3.ggpht.com/rXzZ5r9s5cRcSldQnDuKq69gnOxUUFR_SZKvYVR70djZw19vTYm0JSt3LWTtuhTgALbujC8Zzw=s88-c-k-c0x00ffffff-no-rj-mo'
               channel={item.snippet.channelTitle}
-              link={"watch/" + item.id.videoId}
+              link={"watch/" + item.id + "/" + item.snippet.categoryId}
               previewImage=''
               publishedAt={item.snippet.publishedAt}
               title={item.snippet.title}
@@ -45,7 +46,7 @@ export class HomeRequests extends HttpClient {
             q: "new",
             part: "snippet,id",
             regionCode: "US",
-            maxResults: "20",
+            maxResults: "1",
             order: "date",
             chart: "mostPopular",
           },
