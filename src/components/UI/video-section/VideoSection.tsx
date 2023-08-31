@@ -16,7 +16,7 @@ type VideoSectionProps = {
 };
 
 const VideoSection: FC<VideoSectionProps> = props => {
-  console.log(props);
+  console.log("video section", props);
   return (
     <div className={styles["wrapper"]}>
       <Player
@@ -35,7 +35,7 @@ const VideoSection: FC<VideoSectionProps> = props => {
         channelId={props.videoDetails.snippet.channelId}
         channelName={props.videoDetails.snippet.channelTitle}
         channelSubscriptions={20}
-        videoLikes={props.videoDetails.statistics.likedCount}
+        videoLikes={props.videoDetails.statistics.likeCount}
       />
     </div>
   );

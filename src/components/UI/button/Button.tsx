@@ -14,7 +14,7 @@ const Button: FC<ButtonProps> = ({
   onClick,
   children,
   radios = "full",
-  color = "dark",
+  color = "light",
   className,
 }) => {
   return (

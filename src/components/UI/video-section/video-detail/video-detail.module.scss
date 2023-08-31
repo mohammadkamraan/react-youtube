@@ -3,11 +3,25 @@
 .wrapper {
   @extend .flex-justify-content-between;
   @extend .flex-align-items-center;
+  .channel-detail {
+    @extend .flex-align-items-center;
+    gap: 0.7rem;
+  }
+  .left-panel {
+    @extend .flex-align-items-center;
+    gap: 1rem;
+  }
+  .right-panel {
+    @extend .flex-align-items-center;
+    gap: 1rem;
+  }
+  .tumb-section {
+    @extend .flex-align-items-center;
+  }
 }
 
-.button-with-svg {
+.button {
   svg {
-    color: white;
     height: 1.5rem;
     width: 1.5rem;
   }
