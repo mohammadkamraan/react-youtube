@@ -3,10 +3,6 @@
 .wrapper {
   @extend .flex-justify-content-between;
   @extend .flex-align-items-center;
-  .channel-detail {
-    @extend .flex-align-items-center;
-    gap: 0.7rem;
-  }
   .left-panel {
     @extend .flex-align-items-center;
     gap: 1rem;

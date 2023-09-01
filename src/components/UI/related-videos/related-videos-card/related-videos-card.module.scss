@@ -1,0 +1,15 @@
+@use "../../../../scss/main.scss";
+
+.wrapper {
+  @extend .flex-align-items-start;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  gap: 0.5rem;
+  p {
+    margin-bottom: 0.3rem;
+  }
+  .video-detail {
+    @extend .flex-align-items-center;
+    gap: 0.5rem;
+  }
+}

@@ -3,16 +3,18 @@ import { useParams } from "react-router";
 import { Methods } from "../../constants/constants";
 import { HttpClient, IRequestsHandlerParameter } from "../../utils/httpClient";
 
-import styles from "./video.module.scss";
 import VideoSection from "../../components/UI/video-section/VideoSection";
+import RelatedVideos from "../../components/UI/related-videos/RelatedVideos";
 
 import videoData from "../../utils/data/video.json";
 import videoComments from "../../utils/data/comments.json";
 import relatedVideos from "../../utils/data/relatedVideos.json";
 
+import styles from "./video.module.scss";
+
 const Video: FC = props => {
   const { videoId }: any = useParams();
-  console.log(videoComments);
+
   return (
     <main className={styles["wrapper"]}>
       <VideoSection
@@ -20,7 +22,7 @@ const Video: FC = props => {
         videoDetails={videoData.items[0]}
         comments={videoComments}
       />
-      <div className={styles["related-video-section"]}></div>
+      <RelatedVideos relatedVideos={relatedVideos} />
     </main>
   );
 };
@@ -31,7 +33,7 @@ export class VideoRequest extends HttpClient {
       requests: [
         {
           method: Methods.GET,
-          url: "videos",
+          url: "/fasdfasdfasdfvideos/sfasf",
           params: {
             part: "contentDetails,snippet,statistics",
             id: this.urlParams.videoId as string,
@@ -39,7 +41,7 @@ export class VideoRequest extends HttpClient {
         },
         {
           method: Methods.GET,
-          url: "search",
+          url: "search/sdafasdf",
           params: {
             part: "id,snippet",
             videoCategoryId: this.urlParams.categoryId as string,
@@ -49,7 +51,7 @@ export class VideoRequest extends HttpClient {
         },
         {
           method: Methods.GET,
-          url: "commentThreads",
+          url: "commentThreads/asdfasdfasdf",
           params: {
             part: "id,snippet",
             maxResults: "1",

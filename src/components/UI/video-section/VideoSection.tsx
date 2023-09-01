@@ -16,7 +16,6 @@ type VideoSectionProps = {
 };
 
 const VideoSection: FC<VideoSectionProps> = props => {
-  console.log("video section", props);
   return (
     <div className={styles["wrapper"]}>
       <Player

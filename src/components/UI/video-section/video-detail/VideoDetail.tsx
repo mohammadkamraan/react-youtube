@@ -1,7 +1,6 @@
 import { FC } from "react";
-import Avatar from "../../avatar/Avatar";
 import Button from "../../button/Button";
-import Text from "../../text/Text";
+import ChannelBriefView from "../../channel-brief-view/ChannelBriefView";
 
 import styles from "./video-detail.module.scss";
 
@@ -20,17 +19,12 @@ const VideoDetail: FC<VideoDetailProps> = props => {
       <div>
         <div className={styles["left-panel"]}>
           {/* channel section */}
-          <div className={styles["channel-detail"]}>
-            <Avatar lazyLoad avatarSource={props.channelAvatar} size='2rem' />
-            <div>
-              <Text>
-                <p>{props.channelName}</p>
-              </Text>
-              <Text color='gray' fontWight='thin' fontSize='0.8rem'>
-                <p>{props.channelSubscriptions} subscribers</p>
-              </Text>
-            </div>
-          </div>
+          <ChannelBriefView
+            avatar={props.channelAvatar}
+            name={props.channelName}
+            size='small'
+            subscriptions={props.channelSubscriptions}
+          />
           <Button onClick={() => {}}>Subscribe</Button>
         </div>
       </div>

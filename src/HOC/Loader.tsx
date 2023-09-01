@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 import useHttpClient from "../hooks/useHttpClient";
+import usePageTitle from "../hooks/usePageTitle";
 
 interface ILoaderComponent {
   HttpClient: any;
@@ -18,6 +19,8 @@ const Loader =
     loadingElement,
   }: ILoaderComponent) => {
     const [loading, data, error, loader] = useHttpClient(HttpClient);
+
+    usePageTitle();
 
     return (
       <Component

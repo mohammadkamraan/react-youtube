@@ -4,6 +4,7 @@ import Player from "react-player/youtube";
 import { Link } from "react-router-dom";
 
 import { VIDEOS_BASE_URL } from "../../../constants/constants";
+import usePageTitle from "../../../hooks/usePageTitle";
 import Avatar from "../avatar/Avatar";
 import Text from "../text/Text";
 
@@ -25,6 +26,8 @@ const VideoCard: FC<IVideoCard> = props => {
   const [play, setPlay] = useState<boolean>(false);
   const [timerId, setTimerId] = useState<any>(null);
 
+  const { createPageTitleQuery } = usePageTitle();
+
   const mouseEnterHandler = () => {
     const timerId = setTimeout(() => {
       setPlay(true);
@@ -42,7 +45,10 @@ const VideoCard: FC<IVideoCard> = props => {
     <Link
       onMouseEnter={mouseEnterHandler}
       onMouseLeave={mouseLeaveHandler}
-      to={props.link}
+      to={{
+        pathname: props.link,
+        search: createPageTitleQuery(props.title),
+      }}
       className={styles["video-card"] + " " + props.className}
     >
       <div className={styles["video-wrapper"]}>

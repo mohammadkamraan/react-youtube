@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const VideoLoading = () => {
+const VideoLoading: FC = () => {
   return <>loading ...</>;
 };
 

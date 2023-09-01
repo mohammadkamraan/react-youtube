@@ -7,6 +7,7 @@ $back-ground-hover-opacity: 0.4;
 .button {
   @extend .flex-align-items-center;
   @extend .flex-justify-content-center;
+  gap: 0.5rem;
   padding: 0.2rem 0.5rem;
   &.light-color {
     color: white;

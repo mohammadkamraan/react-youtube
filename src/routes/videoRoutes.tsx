@@ -1,10 +1,9 @@
 import { RouteObject } from "react-router";
 
-import Video, { VideoRequest } from "../screens/video/video";
-import VideoLoading from "../screens/video/videoLoading";
+import Video, { VideoRequest } from "../screens/video/Video";
+import VideoLoading from "../screens/video/VideoLoading";
 
 import { PageLoader } from "../dataBindedComponents";
-import HomeError from "../screens/home/HomeError";
 
 export const videoRoutes: ReadonlyArray<RouteObject> = [
   {
