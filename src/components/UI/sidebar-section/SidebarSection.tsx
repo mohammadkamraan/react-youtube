@@ -13,10 +13,9 @@ const SidebarSection: FC<ISidebarSection> = props => {
   return (
     <>
       <div className={styles["sidebar-section"]}>{props.children}</div>
-      <ConditionalRender
-        condition={props.hasLine}
-        trueComponent={<hr className={styles["divider-line"]} />}
-      />
+      <ConditionalRender condition={props.hasLine}>
+        <hr className={styles["divider-line"]} />{" "}
+      </ConditionalRender>
     </>
   );
 };

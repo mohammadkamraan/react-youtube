@@ -1,9 +1,6 @@
 @use "../../../scss/main.scss";
 @use "../../../scss/variables.scss";
 
-$back-ground-opacity: 0.3;
-$back-ground-hover-opacity: 0.4;
-
 .button {
   @extend .flex-align-items-center;
   @extend .flex-justify-content-center;
@@ -11,9 +8,9 @@ $back-ground-hover-opacity: 0.4;
   padding: 0.2rem 0.5rem;
   &.light-color {
     color: white;
-    background-color: rgba(229, 231, 235, $back-ground-opacity);
+    background-color: variables.$dark-gray;
     &:hover {
-      background-color: rgba(229, 231, 235, $back-ground-hover-opacity);
+      background-color: variables.$light-gray;
     }
   }
   &.dark-color {

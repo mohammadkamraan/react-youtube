@@ -1,5 +1,7 @@
 import { FC } from "react";
 
+import { AVATAR_URL } from "../../../constants/constants";
+
 import styles from "./navbar-options.module.scss";
 
 const NavbarOptions: FC = () => {
@@ -35,11 +37,7 @@ const NavbarOptions: FC = () => {
         />
       </svg>
       {/* user avatar */}
-      <img
-        loading='lazy'
-        src='https://yt3.ggpht.com/rXzZ5r9s5cRcSldQnDuKq69gnOxUUFR_SZKvYVR70djZw19vTYm0JSt3LWTtuhTgALbujC8Zzw=s88-c-k-c0x00ffffff-no-rj-mo'
-        alt='profile-photo'
-      />
+      <img loading='lazy' src={AVATAR_URL} alt='profile-photo' />
     </div>
   );
 };

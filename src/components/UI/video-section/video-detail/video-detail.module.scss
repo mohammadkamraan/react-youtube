@@ -3,6 +3,8 @@
 .wrapper {
   @extend .flex-justify-content-between;
   @extend .flex-align-items-center;
+  margin-bottom: 1rem;
+  width: 100%;
   .left-panel {
     @extend .flex-align-items-center;
     gap: 1rem;

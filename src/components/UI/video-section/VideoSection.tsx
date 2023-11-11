@@ -5,7 +5,10 @@ import Player from "react-player/youtube";
 import { VIDEOS_BASE_URL } from "../../../constants/constants";
 import FormattedText from "../formatted-text/FormattedText";
 import Text from "../text/Text";
+import VideoDescription from "./video-description/VideoDescription";
 import VideoDetail from "./video-detail/VideoDetail";
+
+import { AVATAR_URL } from "../../../constants/constants";
 
 import styles from "./video-section.module.scss";
 
@@ -16,6 +19,7 @@ type VideoSectionProps = {
 };
 
 const VideoSection: FC<VideoSectionProps> = props => {
+  console.log(props);
   return (
     <div className={styles["wrapper"]}>
       <Player
@@ -30,11 +34,18 @@ const VideoSection: FC<VideoSectionProps> = props => {
         </Text>
       </FormattedText>
       <VideoDetail
-        channelAvatar='https://yt3.ggpht.com/rXzZ5r9s5cRcSldQnDuKq69gnOxUUFR_SZKvYVR70djZw19vTYm0JSt3LWTtuhTgALbujC8Zzw=s88-c-k-c0x00ffffff-no-rj-mo'
+        channelAvatar={AVATAR_URL}
         channelId={props.videoDetails.snippet.channelId}
         channelName={props.videoDetails.snippet.channelTitle}
         channelSubscriptions={20}
         videoLikes={props.videoDetails.statistics.likeCount}
+      />
+      <VideoDescription
+        videoViews={props.videoDetails.statistics.viewCount}
+        publishedAt={props.videoDetails.snippet.publishedAt}
+        description={props.videoDetails.snippet.description}
+        channelTitle={props.videoDetails.snippet.channelTitle}
+        avatar={AVATAR_URL}
       />
     </div>
   );

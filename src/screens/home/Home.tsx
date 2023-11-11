@@ -3,6 +3,8 @@ import { Methods } from "../../constants/constants";
 import { HttpClient } from "../../utils/httpClient";
 import GridSystem from "../../components/UI/grid-system/GridSystem";
 
+import { AVATAR_URL } from "../../constants/constants";
+
 import styles from "./home.module.scss";
 import VideoCard from "../../components/UI/video-card/VideoCard";
 import ControlledList from "../../components/dom/controlled-list/ControlledList";
@@ -18,7 +20,7 @@ const Home: FC = (props: any) => {
             <VideoCard
               key={item.id}
               videoId={item.id}
-              avatarUrl='https://yt3.ggpht.com/rXzZ5r9s5cRcSldQnDuKq69gnOxUUFR_SZKvYVR70djZw19vTYm0JSt3LWTtuhTgALbujC8Zzw=s88-c-k-c0x00ffffff-no-rj-mo'
+              avatarUrl={AVATAR_URL}
               channel={item.snippet.channelTitle}
               link={"watch/" + item.id + "/" + item.snippet.categoryId}
               previewImage=''

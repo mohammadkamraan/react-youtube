@@ -1,0 +1,11 @@
+@use "../../../scss/variables.scss";
+
+.wrapper {
+  background-color: variables.$dark-gray;
+  height: auto;
+  border-radius: 5px;
+  padding: 1rem;
+  &:hover {
+    background-color: variables.$light-gray;
+  }
+}
