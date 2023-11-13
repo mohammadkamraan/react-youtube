@@ -1,22 +1,15 @@
 import { FC, memo, ReactNode } from "react";
+import { IComponentChildren } from "../../../interfaces";
 
-interface IConditionalRender {
+interface IConditionalRender extends IComponentChildren {
   condition: boolean;
-  trueComponent: ReactNode;
-  falseComponent?: ReactNode;
 }
 
-const ConditionalRender = ({
-  condition,
-  trueComponent,
-  falseComponent,
-}: IConditionalRender) => {
+const ConditionalRender = ({ condition, children }: IConditionalRender) => {
   if (condition) {
-    return trueComponent;
-  } else if (falseComponent) {
-    return falseComponent;
+    return children;
   } else {
-    return null;
+    null;
   }
 };
 

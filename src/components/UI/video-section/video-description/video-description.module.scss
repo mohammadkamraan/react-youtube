@@ -1,0 +1,36 @@
+@use "../../../../scss/main.scss";
+
+.wrapper {
+  overflow: hidden;
+  height: 5rem;
+  cursor: pointer;
+  &.wrapper-full {
+    overflow: visible;
+    height: auto;
+  }
+}
+
+.views-wrapper {
+  @extend .flex-align-items-center;
+  gap: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.channel-actions {
+  @extend .flex-align-items-center;
+  gap: 2rem;
+  margin-top: 1rem;
+
+  .channel-action {
+    padding: 0.25rem 8rem;
+  }
+}
+
+.channel-actions-svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.description-text {
+  margin-bottom: 1rem;
+}

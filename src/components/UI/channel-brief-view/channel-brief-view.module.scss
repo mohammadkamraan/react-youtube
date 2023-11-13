@@ -1,0 +1,6 @@
+@use "../../../scss/main.scss";
+
+.wrapper {
+  @extend .flex-align-items-center;
+  gap: 0.7rem;
+}

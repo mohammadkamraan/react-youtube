@@ -8,7 +8,7 @@ export type IHttpClientOptions = {
   url: string;
   method: Methods;
   data?: any;
-  params?: { [key: string]: string };
+  params?: { [key: string]: string | number | boolean };
 };
 
 export type IRequestsHandlerParameter = {

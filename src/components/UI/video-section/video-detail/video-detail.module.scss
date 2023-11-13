@@ -1,0 +1,26 @@
+@use "../../../../scss/main.scss";
+
+.wrapper {
+  @extend .flex-justify-content-between;
+  @extend .flex-align-items-center;
+  margin-bottom: 1rem;
+  width: 100%;
+  .left-panel {
+    @extend .flex-align-items-center;
+    gap: 1rem;
+  }
+  .right-panel {
+    @extend .flex-align-items-center;
+    gap: 1rem;
+  }
+  .tumb-section {
+    @extend .flex-align-items-center;
+  }
+}
+
+.button {
+  svg {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
