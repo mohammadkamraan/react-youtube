@@ -6,9 +6,9 @@ import { HttpClient, IRequestsHandlerParameter } from "../../utils/httpClient";
 import VideoSection from "../../components/UI/video-section/VideoSection";
 import RelatedVideos from "../../components/UI/related-videos/RelatedVideos";
 
-import videoData from "../../utils/data/video.json";
-import videoComments from "../../utils/data/comments.json";
-import relatedVideos from "../../utils/data/relatedVideos.json";
+import videoData from "../../data/video.json";
+import videoComments from "../../data/comments.json";
+import relatedVideos from "../../data/relatedVideos.json";
 
 import styles from "./video.module.scss";
 
@@ -17,11 +17,7 @@ const Video: FC = props => {
 
   return (
     <main className={styles["wrapper"]}>
-      <VideoSection
-        videoId={videoId}
-        videoDetails={videoData.items[0]}
-        comments={videoComments}
-      />
+      <VideoSection videoId={videoId} videoDetails={videoData.items[0]} comments={videoComments} />
       <RelatedVideos relatedVideos={relatedVideos} />
     </main>
   );
@@ -59,11 +55,7 @@ export class VideoRequest extends HttpClient {
           },
         },
       ],
-      expectedData: [
-        { dataKey: "video" },
-        { dataKey: "relatedVideos" },
-        { dataKey: "comments" },
-      ],
+      expectedData: [{ dataKey: "video" }, { dataKey: "relatedVideos" }, { dataKey: "comments" }],
     };
   }
 }
