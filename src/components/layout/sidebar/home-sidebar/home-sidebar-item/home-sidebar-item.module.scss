@@ -1,0 +1,25 @@
+@use "../../../../../scss/variables.scss";
+@use "../../../../../scss/main.scss";
+
+.sidebar-item {
+  text-decoration: none;
+  div {
+    @extend .flex-column-justify-content-center;
+    @extend .flex-column-align-items-center;
+    height: 5rem;
+    border-radius: 10px;
+    svg {
+      color: white;
+      stroke: white;
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &:hover {
+    div {
+      background-color: variables.$light-gray;
+    }
+  }
+}
