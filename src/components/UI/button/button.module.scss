@@ -6,6 +6,7 @@
   @extend .flex-justify-content-center;
   gap: 0.5rem;
   padding: 0.2rem 0.5rem;
+  cursor: pointer;
   &.light-color {
     color: white;
     background-color: variables.$dark-gray;

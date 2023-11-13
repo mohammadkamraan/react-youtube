@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, MouseEvent } from "react";
 import Box from "../../box/Box";
 import Button from "../../button/Button";
 import ChannelBriefView from "../../channel-brief-view/ChannelBriefView";
@@ -28,6 +28,14 @@ const VideoDescription: FC<VideoDescriptionProps> = ({
     setIsShowMoreAvailable(showMore => !showMore);
   };
 
+  const onVideosClick = (event: MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+  };
+
+  const onSubscribe = (event: MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+  };
+
   return (
     <Box className={`${styles["wrapper"]} ${isShowMoreAvailable && styles["wrapper-full"]}`} onClick={onBoxClick}>
       <div className={styles["views-wrapper"]}>
@@ -45,7 +53,7 @@ const VideoDescription: FC<VideoDescriptionProps> = ({
       <ConditionalRender condition={isShowMoreAvailable}>
         <ChannelBriefView avatar={avatar} name={channelTitle} size='medium' subscriptions={9} />
         <div className={styles["channel-actions"]}>
-          <Button onClick={() => {}} className={styles["channel-action"]} color='dark'>
+          <Button onClick={onVideosClick} className={styles["channel-action"]} color='dark'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
@@ -64,7 +72,7 @@ const VideoDescription: FC<VideoDescriptionProps> = ({
               <p>Videos</p>
             </Text>
           </Button>
-          <Button onClick={() => {}} className={styles["channel-action"]} color='dark'>
+          <Button onClick={onSubscribe} className={styles["channel-action"]} color='dark'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'

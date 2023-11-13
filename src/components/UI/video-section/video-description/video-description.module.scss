@@ -3,6 +3,7 @@
 .wrapper {
   overflow: hidden;
   height: 5rem;
+  cursor: pointer;
   &.wrapper-full {
     overflow: visible;
     height: auto;
